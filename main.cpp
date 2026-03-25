@@ -6,8 +6,8 @@ public:
 	std::string getName() const { return nameF; }
 	void printInfo(Figure* fig) {
 		std::cout << fig->getName() << ":\n"
-			<< "Ñòîðîíû: " << fig->getLengths() << "\n"
-			<< "Óãëû: " << fig->getCorners() << "\n\n";
+			<< "Ð¡Ñ‚Ð¾Ñ€Ð¾Ð½Ñ‹: " << fig->getLengths() << "\n"
+			<< "Ð£Ð³Ð»Ñ‹: " << fig->getCorners() << "\n\n";
 	}
 	virtual std::string getLengths() const = 0;
 	virtual std::string getCorners() const = 0;
@@ -17,14 +17,14 @@ protected:
 	Figure(std::string name) :
 		nameF (name) {}
 private:
-	std::string nameF{ "Ôèãóðà" };
+	std::string nameF{ "Ð¤Ð¸Ð³ÑƒÑ€Ð°" };
 };
 
 class Triangle : 
 	public Figure {
 public:
-	Triangle(int l1, int l2, int l3, int c1, int c2, int c3) :       //ïóáëè÷íûé êîíñòðóêòîð äëÿ ñîçäàíèÿ îáúåêòîâ îáû÷íîãî òðåóãîëüíèêà (âûçûâàåò ïðîòåêòåä êîíñòðóêòîð, íî ñ èìåíåì òðåóã)
-		Triangle(l1, l2, l3, c1, c2, c3, "Òðåóãîëüíèê") {}
+	Triangle(int l1, int l2, int l3, int c1, int c2, int c3) :       //Ð¿ÑƒÐ±Ð»Ð¸Ñ‡Ð½Ñ‹Ð¹ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð´Ð»Ñ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ñ Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð² Ð¾Ð±Ñ‹Ñ‡Ð½Ð¾Ð³Ð¾ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ° (Ð²Ñ‹Ð·Ñ‹Ð²Ð°ÐµÑ‚ Ð¿Ñ€Ð¾Ñ‚ÐµÐºÑ‚ÐµÐ´ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€, Ð½Ð¾ Ñ Ð¸Ð¼ÐµÐ½ÐµÐ¼ Ñ‚Ñ€ÐµÑƒÐ³)
+		Triangle(l1, l2, l3, c1, c2, c3, "Ð¢Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº") {}
 protected:
 	Triangle(int l1, int l2, int l3, int c1, int c2, int c3, const std::string name) :	
 		Figure (name) {
@@ -43,7 +43,7 @@ class Quadrangle :
 	public Figure{
 public:
 	Quadrangle(int l1, int l2, int l3, int l4, int c1, int c2, int c3, int c4) :
-		Quadrangle (l1,l2,l3,l4,c1,c2,c3,c4, "×åòûð¸õóãîëüíèê") {}
+		Quadrangle (l1,l2,l3,l4,c1,c2,c3,c4, "Ð§ÐµÑ‚Ñ‹Ñ€Ñ‘Ñ…ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº") {}
 protected:
 	Quadrangle(int l1, int l2, int l3, int l4, int c1, int c2, int c3, int c4, const std::string name) :
 		Figure(name) {
@@ -62,7 +62,7 @@ class RectangularTriangle :
 	public Triangle {
 public:
 	RectangularTriangle(int l1, int l2, int l3, int c1, int c2) : 
-		Triangle( l1, l2, l3, c1, c2, 90, "Ïðÿìîóãîëüíûé òðåóãîëüíèê") {}
+		Triangle( l1, l2, l3, c1, c2, 90, "ÐŸÑ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ñ‹Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº") {}
 
 };
 
@@ -70,42 +70,42 @@ class IsoscelesTriangle :
 	public Triangle {
 public:
 	IsoscelesTriangle(int l1, int l2, int c1, int c2) :
-		Triangle(l1, l2, l1, c1, c2, c1, "Ðàâíîáåäðåííûé òðåóãîëüíèê") {}
+		Triangle(l1, l2, l1, c1, c2, c1, "Ð Ð°Ð²Ð½Ð¾Ð±ÐµÐ´Ñ€ÐµÐ½Ð½Ñ‹Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº") {}
 };
 
 class EquilateralTriangle :
 	public Triangle {
 public:
 	EquilateralTriangle(int l1) :
-		Triangle(l1, l1, l1, 60, 60, 60, "Ðàâíîñòîðîííèé òðåóãîëüíèê") {}
+		Triangle(l1, l1, l1, 60, 60, 60, "Ð Ð°Ð²Ð½Ð¾ÑÑ‚Ð¾Ñ€Ð¾Ð½Ð½Ð¸Ð¹ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº") {}
 };
 
 class Rectangle :
 	public Quadrangle {
 public:
 	Rectangle(int l1, int l2) : 
-		Quadrangle(l1, l2, l1, l2, 90, 90, 90, 90,"Ïðÿìîóãîëüíèê") { }
+		Quadrangle(l1, l2, l1, l2, 90, 90, 90, 90,"ÐŸÑ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸Ðº") { }
 };
 
 class Square :
 	public Quadrangle {
 public:
 	Square(int l1) :
-		Quadrangle(l1, l1, l1, l1, 90, 90, 90, 90, "Êâàäðàò") { }
+		Quadrangle(l1, l1, l1, l1, 90, 90, 90, 90, "ÐšÐ²Ð°Ð´Ñ€Ð°Ñ‚") { }
 };
 
 class Parallelogram :
 	public Quadrangle {
 public:
 	Parallelogram(int l1, int l2, int c1, int c2) :
-		Quadrangle(l1, l2, l1, l2, c1, c2, c1, c2, "Ïàðàëëåëîãðàìì") { }
+		Quadrangle(l1, l2, l1, l2, c1, c2, c1, c2, "ÐŸÐ°Ñ€Ð°Ð»Ð»ÐµÐ»Ð¾Ð³Ñ€Ð°Ð¼Ð¼") { }
 };
 
 class Rhomb :
 	public Quadrangle {
 public:
 	Rhomb(int l1, int c1, int c2) :
-		Quadrangle(l1, l1, l1, l1, c1, c2, c1, c2, "Ðîìá") {}
+		Quadrangle(l1, l1, l1, l1, c1, c2, c1, c2, "Ð Ð¾Ð¼Ð±") {}
 };
 
 int main() {
