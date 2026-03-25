@@ -4,7 +4,7 @@
 class Figure {
 public:
 	std::string getName() const { return nameF; }
-	void printInfo(Figure* fig) {
+	void printInfo(Figure* fig) const {
 		std::cout << fig->getName() << ":\n"
 			<< "Стороны: " << fig->getLengths() << "\n"
 			<< "Углы: " << fig->getCorners() << "\n\n";
